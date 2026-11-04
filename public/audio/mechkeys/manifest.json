@@ -1,0 +1,162 @@
+{
+  "extensionId": "ggkamagcddlombobgpfplaigbonfnpmi",
+  "extensionVersion": "2.0.2",
+  "license": "CC0-1.0",
+  "files": [
+    {
+      "path": "classic/down-01.wav",
+      "sha256": "7b873548c399b9aa0efbe63052fe1344c5317a9b23455b8be3523f47d434daf1",
+      "bytes": 25260
+    },
+    {
+      "path": "classic/down-02.wav",
+      "sha256": "f58f93430c1ad434feb341a89b89740ccad75e7a775d778d91b7f206e0acbe8e",
+      "bytes": 25260
+    },
+    {
+      "path": "classic/down-03.wav",
+      "sha256": "d67cf9547d99fc65c815c4c68fa9181e0af71419761cbb1d1f0a10eb8491a8d2",
+      "bytes": 25260
+    },
+    {
+      "path": "classic/down-04.wav",
+      "sha256": "29e1aea1fb841a0663ce75e9d83e675ddc7ae5cef00c623bdda65a72604fde7e",
+      "bytes": 25260
+    },
+    {
+      "path": "classic/down-05.wav",
+      "sha256": "619eb7e26571657b76fc9e1e3d99e85c3fc2259fa91c4c45f57384a85774ac24",
+      "bytes": 25260
+    },
+    {
+      "path": "classic/down-06.wav",
+      "sha256": "419bde001e7ed1cae63b84f60c803fb024a0254e1afe65e59d8c6d8ad4196eb7",
+      "bytes": 25260
+    },
+    {
+      "path": "classic/down-07.wav",
+      "sha256": "522834f471e6c2935fd1e6a28042c0864925556efbec32c36d7c7a98026d4bfc",
+      "bytes": 25260
+    },
+    {
+      "path": "classic/down-08.wav",
+      "sha256": "c2ab8722a81a2f1cab66cd863a09a9ec00392e2ede61362b3707a7bcc0eee506",
+      "bytes": 25260
+    },
+    {
+      "path": "classic/down-09.wav",
+      "sha256": "25595c1d1e0e18aada04dce3a651dc2c499f1fbc2647c1ab0b3c4e718275b16b",
+      "bytes": 25260
+    },
+    {
+      "path": "classic/down-10.wav",
+      "sha256": "3a65bf93ec554b068b0a64d11d2bb521cd54e7a9e7ef3362a670efb1e410f0dc",
+      "bytes": 25260
+    },
+    {
+      "path": "classic/down-11.wav",
+      "sha256": "72e79b249040bff166be863dd75f5c50d6e22bf904bd7e0adab1b30941e19968",
+      "bytes": 25260
+    },
+    {
+      "path": "classic/down-12.wav",
+      "sha256": "79de7a9cc035ca4204600a52281129be9f258b1d903c88279b1e7128e57ba86c",
+      "bytes": 25260
+    },
+    {
+      "path": "classic/down-13.wav",
+      "sha256": "a73d12a22403fe7b63a3da41ff07f13f956e3a30b397196288262d467f1e28c3",
+      "bytes": 25260
+    },
+    {
+      "path": "classic/down-14.wav",
+      "sha256": "b2069e29be488a7e55b151ef458e3314ec8f138f6d5a34fe19189f4810cba098",
+      "bytes": 25260
+    },
+    {
+      "path": "classic/down-15.wav",
+      "sha256": "39df76e16d6daa76619f17b724ed4fdcfacc3d0c311103f6d45dc23ec3634678",
+      "bytes": 25260
+    },
+    {
+      "path": "classic/down-16.wav",
+      "sha256": "181e3c5d28d2a1ed0e953f5668391ef1f9b7cd577d33058fb62bd18473b45791",
+      "bytes": 25260
+    },
+    {
+      "path": "tactile/backspace-down-01.mp3",
+      "sha256": "11bbfea9c55a902acdf5360a32d7e0a3d4f36fe4cfc2a8fbec04bc85f089c0d4",
+      "bytes": 6144
+    },
+    {
+      "path": "tactile/down-01.mp3",
+      "sha256": "bd0bf47b42eadb6991f8e0ccc849af9a0d55d59d87297ab323348090332f3e73",
+      "bytes": 4539
+    },
+    {
+      "path": "tactile/down-02.mp3",
+      "sha256": "ec4d29b88d66d478e269d15456a9bec695fd8efd03ecbe04ac3c9595733443b2",
+      "bytes": 6157
+    },
+    {
+      "path": "tactile/down-03.mp3",
+      "sha256": "22c487818377e3bb7438e5001bc51b48a69e9a9943127d8054fa47cc9bc868cf",
+      "bytes": 5426
+    },
+    {
+      "path": "tactile/down-04.mp3",
+      "sha256": "78fcafd0fb787180d4bc3d3e6be38deb7fe8223ab210efef8ccf1d04b9ff47a6",
+      "bytes": 5114
+    },
+    {
+      "path": "tactile/down-05.mp3",
+      "sha256": "0be1fe122b8da67c0ce97ca2b098dc2626513f007341250ea7e6feed0a4a8d92",
+      "bytes": 5635
+    },
+    {
+      "path": "tactile/down-06.mp3",
+      "sha256": "2c3509bd80ebec134a2276a8cb4411773ac0331894fea056efb182935413cb2d",
+      "bytes": 6262
+    },
+    {
+      "path": "tactile/down-07.mp3",
+      "sha256": "ecb1701717091d954949ff23ba41d19348a790deea22478506f5cd625bc47508",
+      "bytes": 5792
+    },
+    {
+      "path": "tactile/down-08.mp3",
+      "sha256": "b66c58738b2d02b210df2bd57f8b1f56719054a67bf22f1f318324f1028fcb3c",
+      "bytes": 6835
+    },
+    {
+      "path": "tactile/down-09.mp3",
+      "sha256": "2722307eeffa50f1b59c909c49d7427f256b5bb0b881b5a8c52f1c7a62e90e5e",
+      "bytes": 5113
+    },
+    {
+      "path": "tactile/down-10.mp3",
+      "sha256": "4772e564608862227ffdcc5aec2ef56031f5ee4f9fcc16c2d805c4689d355b0a",
+      "bytes": 5948
+    },
+    {
+      "path": "tactile/down-11.mp3",
+      "sha256": "65cae81c6308d9c893ed1512b2dbc39035adc4d75519991c215b97ac41c16b5e",
+      "bytes": 6261
+    },
+    {
+      "path": "tactile/down-12.mp3",
+      "sha256": "813ef394935bd69d91693a7384361b9b8c2fbc4a56b9a205a22cdf63accb9c64",
+      "bytes": 5897
+    },
+    {
+      "path": "tactile/enter-down-01.mp3",
+      "sha256": "bc86b5849da5b66aae8a4be128c39de4d74370fde9b233e210132dd2c4a9169d",
+      "bytes": 7008
+    },
+    {
+      "path": "tactile/up-01.mp3",
+      "sha256": "a66a6563a1f8393e4dbd0cad3cccc14e646839bb1c8074d7685ee1592ee583af",
+      "bytes": 10855
+    }
+  ]
+}

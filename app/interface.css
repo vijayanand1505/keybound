@@ -1,0 +1,454 @@
+/* Quiet interface chrome. DM Sans is locally hosted; game passages keep their own type. */
+.app .topbar {
+  height: 80px;
+  padding-inline: 40px;
+}
+.app .breadcrumb {
+  min-width: 0;
+  font: 500 14px/1.5 var(--sans);
+  letter-spacing: 0;
+}
+.app .breadcrumb > span {
+  color: var(--text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.app .topbar-right {
+  flex-shrink: 0;
+  gap: 20px;
+}
+.app .topbar .icon-button {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+}
+.app .sidebar-scroll nav {
+  margin-top: 36px;
+}
+.app .nav-item {
+  min-height: 48px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+.app .main:not(.game-main) {
+  max-width: 1320px;
+  padding: 44px 40px 0;
+}
+.app .page-heading {
+  margin-bottom: 36px;
+}
+.app .page-heading h1,
+.app .siege-heading h1 {
+  font-size: clamp(28px, 2.6vw, 40px);
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+  margin: 0 0 12px;
+}
+.app .page-heading p,
+.app .siege-heading p {
+  max-width: 56ch;
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--muted);
+}
+.app .section-heading {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  gap: 16px;
+}
+.app .section-heading h2 {
+  font-size: 20px;
+  font-weight: 600;
+  gap: 12px;
+}
+.app .section-heading > span,
+.app .section-heading h2 > span {
+  font: 400 14px/1.5 var(--sans);
+  letter-spacing: 0;
+}
+.app .expedition-layout,
+.app .bottom-grid {
+  grid-template-columns: minmax(0, 1fr) 280px;
+  gap: 28px;
+}
+.app .hero-card {
+  height: 420px;
+  min-height: 420px;
+  border-radius: 14px;
+  border-color: var(--line);
+}
+.app .hero-top {
+  padding: 26px 28px;
+}
+.app .glass-tag {
+  font-size: 13px;
+  border-radius: 6px;
+}
+.app .hero-content {
+  inset: auto 32px 32px;
+}
+.app .hero-content h2 {
+  font-size: clamp(28px, 2.5vw, 36px);
+  margin-bottom: 12px;
+}
+.app .hero-content > p {
+  max-width: 42ch;
+  font-size: 15px;
+  line-height: 1.65;
+}
+.app .hero-meta {
+  font-size: 13px;
+  margin: 20px 0 24px;
+}
+.app .dispatch-card,
+.app .coach-card {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--panel);
+  padding: 28px;
+}
+.app .dispatch-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 0;
+  height: auto;
+}
+.app .dispatch-card h2 {
+  font-size: 24px;
+  line-height: 1.3;
+  margin: 24px 0 12px;
+}
+.app .dispatch-card > p {
+  font-size: 15px;
+  line-height: 1.65;
+  text-align: left;
+}
+.app .daily-symbol {
+  width: 48px;
+  height: 48px;
+  margin: 0;
+}
+.app .daily-symbol > svg {
+  width: 28px;
+  height: 28px;
+}
+.app .daily-symbol :is(i, b) {
+  display: none;
+}
+.app .daily-tags {
+  margin: 20px 0;
+  font-size: 13px;
+}
+.app .dispatch-card .button {
+  margin-top: auto;
+  width: 100%;
+}
+.app .button {
+  min-height: 44px;
+  border-radius: 7px;
+}
+.app .expedition-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+.app .expedition-tile {
+  border-color: var(--line);
+  border-radius: 12px;
+  background: var(--panel);
+}
+.app .expedition-tile.selected {
+  border-color: var(--gold);
+}
+.app .tile-art {
+  height: 100px;
+}
+.app .tile-copy {
+  padding: 20px;
+  min-height: 124px;
+}
+.app .tile-copy .tiny-label {
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+.app .tile-copy h3 {
+  font-size: 19px;
+  margin-bottom: 10px;
+}
+.app .tile-status {
+  font-size: 13px;
+}
+.app :is(.upcoming-expeditions, .siege-help) {
+  border-block: 1px solid var(--line);
+  margin-top: 28px;
+}
+.app :is(.upcoming-expeditions, .siege-help) > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 56px;
+  padding-block: 16px;
+  list-style: none;
+  color: var(--muted);
+  font: 500 14px/1.5 var(--sans);
+  cursor: pointer;
+}
+.app summary::-webkit-details-marker {
+  display: none;
+}
+.app :is(.upcoming-expeditions, .siege-help) > summary:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
+}
+.app .upcoming-expeditions[open] > summary svg {
+  transform: rotate(90deg);
+}
+.app .siege-help[open] > summary svg {
+  transform: rotate(180deg);
+}
+.app .upcoming-expeditions > .expedition-grid {
+  padding-bottom: 24px;
+}
+.app .bottom-grid {
+  margin-top: 36px;
+  align-items: start;
+}
+.app .mission-board .section-heading {
+  margin-top: 0;
+}
+.app .mission-row {
+  min-height: 80px;
+  padding-block: 18px;
+}
+.app .mission-title {
+  font-size: 15px;
+}
+.app .mission-title small {
+  margin-top: 6px;
+  font-size: 13px;
+}
+.app .coach-card h3 {
+  font-size: 21px;
+  line-height: 1.35;
+}
+.app .coach-card > p {
+  font-size: 15px;
+  line-height: 1.65;
+  margin: 14px 0 24px;
+}
+.app .coach-card .text-button {
+  line-height: 1.6;
+  text-align: left;
+}
+.app .footer {
+  margin-top: 56px;
+  padding: 28px 0 32px;
+  gap: 16px 32px;
+  font: 400 14px/1.6 var(--sans);
+  letter-spacing: 0;
+}
+.app .footer .footer-brand {
+  display: inline;
+  font: 600 14px/1.6 var(--sans);
+  letter-spacing: 0.04em;
+}
+.app .workspace .footer .footer-credit {
+  font: 400 14px/1.7 var(--sans);
+  color: var(--muted);
+  margin: 0;
+  display: block;
+}
+.app .footer-credit a {
+  font-weight: 500;
+  white-space: nowrap;
+}
+.app .siege-heading {
+  margin-bottom: 32px;
+}
+.app .siege-difficulty-options {
+  gap: 16px;
+}
+.app .siege-difficulty-options label {
+  padding: 20px;
+  border-radius: 9px;
+}
+.app .siege-setup-footer,
+.app .siege-toolbar {
+  justify-content: flex-end;
+}
+.app .siege-help .siege-details {
+  margin-top: 0;
+  padding: 12px 0 28px;
+}
+.app .workspace .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+@media (max-width: 1180px) {
+  .app .expedition-layout,
+  .app .bottom-grid {
+    grid-template-columns: minmax(0, 1fr) 240px;
+    gap: 24px;
+  }
+  .app .dispatch-card,
+  .app .coach-card {
+    padding: 24px;
+  }
+}
+@media (max-width: 950px) {
+  .app .topbar {
+    padding-inline: 28px;
+  }
+  .app .main:not(.game-main) {
+    padding: 36px 28px 0;
+  }
+  .app .sidebar-scroll nav {
+    margin-top: 28px;
+  }
+  .app .expedition-layout,
+  .app .bottom-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .app .dispatch-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 12px 24px;
+  }
+  .app .daily-symbol {
+    display: none;
+  }
+  .app .dispatch-card h2,
+  .app .dispatch-card > p,
+  .app .daily-tags {
+    margin: 0;
+  }
+  .app .dispatch-card h2,
+  .app .dispatch-card > p {
+    grid-column: 1;
+  }
+  .app .dispatch-card .button {
+    grid-column: 2;
+    grid-row: 1 / 4;
+    align-self: center;
+    margin: 0;
+  }
+  .app .expedition-grid {
+    gap: 16px;
+  }
+}
+@media (max-width: 600px) {
+  .app .topbar {
+    height: 72px;
+    padding-inline: 20px;
+  }
+  .app .main:not(.game-main) {
+    padding: 30px 20px 0;
+  }
+  .app .page-heading {
+    margin-bottom: 28px;
+  }
+  .app .page-heading h1,
+  .app .siege-heading h1 {
+    font-size: 28px;
+  }
+  .app .page-heading p,
+  .app .siege-heading p {
+    font-size: 15px;
+  }
+  .app .hero-card {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    min-height: 400px;
+  }
+  .app .hero-top {
+    padding: 20px;
+    flex-shrink: 0;
+  }
+  .app .hero-content {
+    position: relative;
+    inset: auto;
+    margin-top: auto;
+    padding: 8px 22px 26px;
+  }
+  .app .hero-content h2 {
+    font-size: 28px;
+  }
+  .app .hero-meta {
+    gap: 10px;
+    margin: 16px 0 20px;
+  }
+  .app .hero-content .button {
+    width: 100%;
+    padding-inline: 12px;
+    gap: 8px;
+  }
+  .app .hero-content .button > svg:last-child {
+    display: none;
+  }
+  .app .dispatch-card {
+    display: flex;
+    padding: 24px;
+  }
+  .app .dispatch-card .button {
+    margin-top: 8px;
+    padding-inline: 12px;
+    gap: 8px;
+  }
+  .app .dispatch-card .button > svg:last-child {
+    margin-left: 0;
+  }
+  .app .section-heading {
+    margin-top: 32px;
+  }
+  .app .section-heading h2 {
+    font-size: 20px;
+  }
+  .app .expedition-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+  .app .expedition-tile {
+    display: grid;
+    grid-template-columns: 84px minmax(0, 1fr);
+    align-items: stretch;
+    min-height: 130px;
+  }
+  .app .tile-art {
+    width: 100%;
+    height: 100%;
+    border-bottom: 0;
+    border-right: 1px solid var(--line);
+  }
+  .app .tile-art > span {
+    display: none;
+  }
+  .app .tile-copy {
+    padding: 18px;
+    min-height: 0;
+  }
+  .app .tile-copy h3 {
+    font-size: 18px;
+  }
+  .app .bottom-grid {
+    margin-top: 32px;
+  }
+  .app .footer {
+    margin-top: 40px;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .app .siege-difficulty-options label {
+    padding: 16px;
+  }
+}

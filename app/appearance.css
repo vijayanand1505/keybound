@@ -1,0 +1,469 @@
+/* The original dark palette is preserved by fallbacks in the shared styles. */
+:root {
+  color-scheme: dark;
+  --accent-strong: #dbb779;
+}
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg: #f2f1e9;
+  --panel: #fbfaf4;
+  --line: #c2cbbd;
+  --muted: #526352;
+  --text: #23352b;
+  --gold: #825c1e;
+  --gold-dark: #71501b;
+  --green: #456d4a;
+  --accent-strong: #825c1e;
+}
+:root[data-accent="sage"] {
+  --gold: #afcea4;
+  --gold-dark: #85ab7b;
+  --accent-strong: #afcea4;
+}
+:root[data-accent="ocean"] {
+  --gold: #8bcdd9;
+  --gold-dark: #59a7b8;
+  --accent-strong: #8bcdd9;
+}
+:root[data-theme="light"][data-accent="sage"] {
+  --gold: #356749;
+  --gold-dark: #285537;
+  --accent-strong: #356749;
+}
+:root[data-theme="light"][data-accent="ocean"] {
+  --gold: #176174;
+  --gold-dark: #124d5d;
+  --accent-strong: #176174;
+}
+:root[data-theme="light"] .app {
+  --theme-text: var(--text);
+  --theme-muted: var(--muted);
+  --theme-accent: var(--gold);
+  --theme-error: #9d392c;
+  --theme-line: var(--line);
+  --theme-panel: var(--panel);
+}
+.app {
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100dvh;
+}
+/* Keep the footer in the viewport; only the upper navigation area may scroll. */
+.app .sidebar {
+  height: 100dvh;
+  max-height: 100dvh;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  overflow: hidden;
+}
+.sidebar-scroll {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: var(--line) transparent;
+}
+.sidebar-scroll .nav-item.active::before {
+  left: 0;
+}
+.app .sidebar-bottom {
+  flex-shrink: 0;
+  padding-top: 18px;
+  margin-top: 0;
+}
+.app .profile {
+  padding-block: 14px;
+  margin-top: 10px;
+}
+.app .profile .avatar,
+.app .profile .guest-badge {
+  flex-shrink: 0;
+}
+.app .profile > span:nth-child(2) {
+  min-width: 0;
+}
+.app .profile .guest-badge {
+  white-space: nowrap;
+}
+.mobile-identity {
+  display: none;
+}
+/* Appearance controls use native radios for keyboard and screen-reader support. */
+.appearance-settings {
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 25px;
+}
+.theme-options,
+.accent-options {
+  padding: 0;
+  margin: 23px 0 0;
+  border: 0;
+  min-width: 0;
+}
+.theme-options legend,
+.accent-options legend {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+.theme-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+.theme-choice {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  gap: 9px;
+  padding: 15px;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  cursor: pointer;
+  background: var(--bg);
+  min-width: 0;
+}
+.theme-choice:hover,
+.accent-choice:hover {
+  border-color: var(--gold);
+}
+.theme-choice.selected,
+.accent-choice.selected {
+  border-color: var(--gold);
+  background: color-mix(in srgb, var(--gold) 8%, var(--bg));
+}
+.theme-choice input {
+  position: absolute;
+  top: 16px;
+  right: 14px;
+  margin: 0;
+  accent-color: var(--gold);
+}
+.theme-choice:focus-within,
+.accent-choice:focus-within {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+.theme-swatch {
+  height: 62px;
+  margin-bottom: 3px;
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  gap: 5px;
+  border: 1px solid #8b9b8055;
+  border-radius: 3px;
+  padding: 9px;
+  background: #ebece2;
+}
+.theme-swatch i {
+  display: block;
+  background: #c4cebc;
+  border-radius: 2px;
+}
+.theme-swatch i:first-child {
+  grid-row: span 2;
+  background: #a6b49a;
+}
+.theme-swatch i:last-child {
+  width: 65%;
+}
+.swatch-dark {
+  background: #172018;
+}
+.swatch-dark i {
+  background: #46523d;
+}
+.swatch-dark i:first-child {
+  background: #81754c;
+}
+.swatch-system {
+  background: linear-gradient(90deg, #ebece2 50%, #172018 50%);
+}
+.swatch-system i {
+  background: #8b9b80;
+}
+.theme-choice-title {
+  font-size: 14px;
+  display: flex;
+  gap: 7px;
+  align-items: center;
+}
+.theme-choice-title svg {
+  color: var(--gold);
+}
+.theme-choice-title svg:last-child:not(:first-child) {
+  margin-left: auto;
+}
+.theme-description {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+.accent-choices {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.accent-choice {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 13px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.accent-choice input {
+  accent-color: var(--gold);
+  margin: 0;
+}
+.accent-dot {
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px #0002;
+}
+.accent-amber {
+  background: #bd913f;
+}
+.accent-sage {
+  background: #679660;
+}
+.accent-ocean {
+  background: #4c9aaf;
+}
+.app .sound-pack.selected,
+.app .expedition-tile.selected {
+  border-color: var(--gold);
+}
+.app .sound-pack.selected .sound-pack-title,
+.app .is-playing .pack-wave {
+  color: var(--gold);
+}
+/* Light chrome, panels and reading surfaces; illustrated scenes keep their night palette. */
+:root[data-theme="light"] .sidebar {
+  background: #e8ebdf;
+}
+:root[data-theme="light"] .nav-item.active {
+  background: color-mix(in srgb, var(--gold) 12%, var(--panel));
+}
+:root[data-theme="light"] .nav-item:hover {
+  background: #dce4d4;
+}
+:root[data-theme="light"] .button.primary {
+  color: #fffdf4;
+  background: var(--gold);
+  border-color: var(--gold);
+}
+:root[data-theme="light"] .button.primary:hover {
+  background: var(--gold-dark);
+}
+:root[data-theme="light"] .sound-studio,
+:root[data-theme="light"] .custom-preview,
+:root[data-theme="light"] .custom-practice-banner {
+  background: var(--panel);
+  border-color: var(--line);
+}
+:root[data-theme="light"] .sound-pack.selected {
+  background: color-mix(in srgb, var(--gold) 9%, var(--panel));
+}
+:root[data-theme="light"] .composer-title,
+:root[data-theme="light"] .composer-passage,
+:root[data-theme="light"] .composer-controls select,
+:root[data-theme="light"] .custom-text,
+:root[data-theme="light"] .training-card pre {
+  background: #fffef9;
+}
+:root[data-theme="light"] .composer-title::placeholder,
+:root[data-theme="light"] .composer-passage::placeholder {
+  color: #65715e;
+}
+:root[data-theme="light"] .toggle {
+  background: #c0cbb6;
+  border-color: #8b9a7f;
+}
+:root[data-theme="light"] .toggle i {
+  background: #fffef8;
+}
+:root[data-theme="light"] .toggle.on {
+  background: var(--gold);
+  border-color: var(--gold);
+}
+:root[data-theme="light"] .hero-card,
+:root[data-theme="light"] .briefing-art,
+:root[data-theme="light"] .tile-art,
+:root[data-theme="light"] .game-view {
+  --theme-text: #eeeae0;
+  --theme-muted: #becbb5;
+  --theme-accent: #efd59e;
+  --theme-line: #63735d;
+  --theme-panel: #172018;
+  --gold: #dbb779;
+  color: #eeeae0;
+}
+:root[data-theme="light"] .hero-card .button.primary {
+  color: #242b20;
+}
+:root[data-theme="light"] .game-view .terminal,
+:root[data-theme="light"] .game-view .pause-card {
+  --theme-text: var(--text);
+  --theme-muted: var(--muted);
+  --theme-accent: var(--accent-strong);
+  --theme-panel: var(--panel);
+  --theme-line: var(--line);
+  --gold: var(--accent-strong);
+  background: var(--panel);
+  color: var(--text);
+  border-color: var(--line);
+}
+:root[data-theme="light"] .game-view .terminal-top {
+  color: var(--muted);
+  background: #f0eddf;
+}
+:root[data-theme="light"] .game-view .typing-passage {
+  color: #5b6956;
+}
+:root[data-theme="light"] .game-view .typing-passage .typed {
+  color: #213b2b;
+}
+:root[data-theme="light"] .game-view .typing-passage .wrong,
+:root[data-theme="light"] .game-view .error-label {
+  color: #a33326;
+}
+:root[data-theme="light"] .game-view .typing-passage .caret::before {
+  background: var(--accent-strong);
+}
+:root[data-theme="light"] .game-view .terminal-bottom {
+  color: var(--muted);
+}
+:root[data-theme="light"] .game-view .pause-backdrop {
+  background: #24372c99;
+}
+:root[data-theme="light"] .pause-card {
+  padding: 28px;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+}
+:root[data-theme="light"] .high-contrast {
+  --bg: #fff;
+  --panel: #fff;
+  --text: #102719;
+  --muted: #253d2c;
+  --line: #53694f;
+  --gold: var(--accent-strong);
+}
+:root[data-theme="light"] .high-contrast .typing-passage {
+  color: #34462e;
+}
+:root[data-theme="light"] .high-contrast .typed {
+  color: #102719;
+}
+:root[data-theme="light"] .danger {
+  color: #a33326 !important;
+  border-color: #a33326 !important;
+  background: #a333260a !important;
+}
+@media (max-width: 950px) {
+  .sidebar-scroll .brand {
+    justify-content: center;
+  }
+  .app .sidebar-bottom {
+    padding-top: 12px;
+  }
+  .app .sidebar-bottom .nav-item {
+    margin-bottom: 8px;
+  }
+  .app .profile {
+    margin-top: 0;
+    padding-block: 12px;
+  }
+  .app .mobile-identity {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .mobile-identity strong {
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .mobile-identity small {
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .app .topbar-right {
+    gap: 12px;
+  }
+}
+@media (max-width: 600px) {
+  .app .topbar .breadcrumb {
+    display: none;
+  }
+  .app .topbar {
+    justify-content: flex-end;
+  }
+  .app .topbar-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .theme-grid {
+    grid-template-columns: 1fr;
+  }
+  .theme-choice {
+    padding: 13px;
+    display: grid;
+    grid-template-columns: 55px 1fr;
+    gap: 4px 12px;
+  }
+  .theme-swatch {
+    height: 48px;
+    padding: 6px;
+    grid-row: span 2;
+    margin: 0;
+  }
+  .theme-description {
+    padding-right: 16px;
+  }
+  .theme-choice input {
+    top: 12px;
+    right: 10px;
+  }
+  .theme-choice-title {
+    padding-right: 17px;
+  }
+  .accent-choice {
+    padding: 10px;
+    gap: 6px;
+  }
+}
+:root[data-theme="light"] .dispatch-card,
+:root[data-theme="light"] .coach-card,
+:root[data-theme="light"] .button.ghost {
+  background: var(--panel);
+}
+:root[data-theme="light"] .hero-card,
+:root[data-theme="light"] .briefing-art,
+:root[data-theme="light"] .game-view {
+  background-color: #101615;
+}
+:root[data-theme="dark"] .high-contrast {
+  --gold: var(--accent-strong);
+}
+:root[data-theme="light"]
+  :is(.hero-card, .briefing-art, .game-view)
+  .button.ghost {
+  background: #17211acc;
+  color: #eeeae0;
+  border-color: #71816a;
+}
+/* Error feedback over the illustrated world needs a bright ink, even in Light mode. */
+:root[data-theme="light"] .game-view {
+  --theme-error: #f7b5a2;
+}
+@media (max-width: 950px) {
+  .sidebar-scroll nav .nav-item {
+    padding-inline: 8px;
+  }
+}

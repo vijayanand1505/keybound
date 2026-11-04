@@ -1,0 +1,376 @@
+/* Signal Siege combat, reports, and interruption controls. */
+.app .siege-toolbar,
+.app .siege-return-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  margin: 0 0 12px;
+  font-size: 14px;
+  color: var(--muted);
+}
+.app .siege-return-banner {
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  padding: 14px 18px;
+  margin-bottom: 24px;
+  background: var(--panel);
+}
+.app .siege-fullscreen {
+  min-height: 40px;
+}
+.app .siege-boss-panel {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 24px;
+  color: #e5ddfb;
+  background: #211e35;
+  border-bottom: 1px solid #8f80bd66;
+}
+.app .siege-boss-panel > div:first-of-type {
+  flex: 1;
+  min-width: 0;
+}
+.app .siege-boss-panel strong {
+  display: block;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.app .siege-boss-panel span {
+  display: block;
+  font-size: 12px;
+  line-height: 1.6;
+  margin-top: 3px;
+}
+.app .boss-carrier {
+  color: #cef1d7;
+  background: #18352d;
+}
+.app .boss-overdrive {
+  color: #ffe0ca;
+  background: #382820;
+}
+.siege-phase-markers {
+  display: flex;
+  gap: 5px;
+}
+.siege-phase-markers i {
+  width: 18px;
+  height: 5px;
+  background: #83978b55;
+  border: 1px solid #c0c7aa66;
+}
+.siege-phase-markers .current {
+  background: #efc77e;
+  border-color: #ffe2a8;
+}
+.siege-phase-markers .complete {
+  background: #86b8ab;
+}
+.app .siege-next-letter {
+  color: #102220;
+  background: #f5d79d;
+  border-radius: 2px;
+  padding-block: 1px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.app .siege-next-key {
+  color: #f6dfad;
+  border: 1px solid #d5be8c;
+  margin-left: 5px;
+}
+.app .is-mistake .siege-word {
+  border-color: #f0a493;
+  box-shadow: 0 0 0 2px #d0816c44;
+}
+.app .siege-mistake-feedback {
+  position: absolute;
+  bottom: 21%;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: calc(100% - 28px);
+  padding: 9px 13px;
+  border: 1px solid #d69581;
+  border-radius: 4px;
+  background: #301f21ed;
+  color: #ffe3d5;
+  font-size: 13px;
+  line-height: 1.6;
+  text-align: center;
+  pointer-events: none;
+}
+.app .siege-danger {
+  position: absolute;
+  top: 12px;
+  left: 14px;
+  right: 14px;
+  width: fit-content;
+  max-width: calc(100% - 28px);
+  padding: 7px 11px;
+  border: 1px solid #d6a186;
+  border-radius: 4px;
+  background: #352820ed;
+  color: #ffe0c4;
+  font-size: 12px;
+  pointer-events: none;
+}
+.app .siege-field:has(.siege-danger) .siege-grid-coordinates {
+  display: none;
+}
+.app .siege-recharge {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 24px 14px;
+  background: #101f26;
+  color: #b5cec3;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.app .siege-recharge progress {
+  width: 130px;
+  max-width: 35%;
+  height: 6px;
+  border: 0;
+  accent-color: #a8d2bc;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.siege-recharge progress::-webkit-progress-bar {
+  background: #30493e;
+}
+.siege-recharge progress::-webkit-progress-value {
+  background: #a8d2bc;
+}
+.app .siege-console:fullscreen {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100dvh;
+  border: 0;
+  border-radius: 0;
+  overflow: hidden;
+}
+.app .siege-console:fullscreen .siege-field {
+  flex: 1;
+  min-height: 0;
+  height: auto !important;
+}
+.app .siege-console:fullscreen .siege-hud {
+  flex-shrink: 0;
+}
+.app .siege-soft-pause .siege-end {
+  min-height: 36px;
+}
+.app .siege-report {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 26px;
+  margin-top: 24px;
+  background: var(--panel);
+}
+.app .siege-report-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 22px;
+}
+.app .siege-report h2 {
+  font-size: 24px;
+  margin-top: 7px;
+}
+.app .siege-report h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.app .siege-record {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--gold);
+  font-size: 14px;
+}
+.app .siege-report-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 24px;
+}
+.app .siege-report-metrics span {
+  display: block;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+.app .siege-report-metrics strong {
+  display: block;
+  margin-top: 8px;
+  font-size: 28px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.app .siege-comparison {
+  margin-bottom: 24px;
+}
+.app .siege-comparison p {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  color: var(--muted);
+}
+.app .siege-word-review {
+  margin-top: 24px;
+}
+.app .siege-word-review p {
+  color: var(--muted);
+}
+.app .siege-word-review ul {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.app .siege-word-review li {
+  padding: 10px 13px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  font-family: var(--mono);
+  font-size: 14px;
+}
+.app .siege-word-review li span {
+  display: block;
+  font: 12px/1.6 var(--sans);
+  color: var(--muted);
+  margin-top: 3px;
+}
+.app .siege-share-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  margin-top: 24px;
+}
+.app .siege-report > p[role="status"] {
+  margin-top: 16px;
+}
+.app .combat-sound-settings {
+  margin-top: 20px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+}
+.app .combat-sound-settings .small-muted {
+  font-size: 14px;
+}
+@media (max-width: 720px) {
+  .app .siege-boss-panel {
+    padding: 12px;
+    gap: 8px;
+    align-items: flex-start;
+  }
+  .app .siege-boss-panel > svg {
+    display: none;
+  }
+  .app .siege-phase-markers {
+    margin-top: 8px;
+  }
+  .app .siege-phase-markers i {
+    width: 10px;
+  }
+  .app .siege-recharge {
+    padding: 10px 12px;
+    gap: 10px;
+  }
+  .app .siege-report {
+    padding: 18px;
+  }
+  .app .siege-report-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px 12px;
+  }
+  .app .siege-report-metrics strong {
+    font-size: 24px;
+  }
+  .app .siege-report h2 {
+    font-size: 22px;
+  }
+  .app .siege-share-actions .button {
+    width: 100%;
+  }
+  .app .siege-report p {
+    font-size: 14px;
+  }
+  .app .siege-toolbar {
+    font-size: 13px;
+  }
+  .app .siege-word-review .button {
+    width: 100%;
+  }
+  .app .siege-danger {
+    font-size: 12px;
+  }
+}
+@container battlefield (max-height: 390px) {
+  .app .siege-soft-pause .siege-intro > svg {
+    display: none;
+  }
+  .app .siege-soft-pause .siege-intro p {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .app .siege-soft-pause .siege-end {
+    margin-top: 8px;
+  }
+}
+
+.app .siege-fullscreen-exit {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  z-index: 5;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #92b9a6;
+  border-radius: 4px;
+  background: #16303b;
+  color: #e0e9dc;
+}
+.app .siege-console:fullscreen .siege-danger {
+  max-width: calc(100% - 80px);
+}
+
+.siege-label-connectors {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.siege-label-connectors line {
+  stroke: #9abdaf99;
+  stroke-width: 1;
+  stroke-dasharray: 3 3;
+}
+.siege-label-connectors line.locked {
+  stroke: #f0ce8f;
+  stroke-dasharray: none;
+}
+.app .siege-enemy {
+  transition: none;
+}
+
+.app .siege-console:fullscreen .siege-hud {
+  padding-right: 66px;
+}

@@ -1,0 +1,110 @@
+.app .siege-mode {
+  border: 0;
+  min-width: 0;
+  padding: 0;
+  margin: 0 0 24px;
+}
+.app .siege-mode legend {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+.app .siege-mode > div {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+.app .siege-mode label {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  cursor: pointer;
+}
+.app .siege-mode label.is-selected {
+  border-color: var(--gold);
+  background: color-mix(in srgb, var(--gold) 7%, transparent);
+}
+.app .siege-mode input {
+  accent-color: var(--gold);
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+.app .siege-mode strong,
+.app .siege-mode label span span {
+  display: block;
+}
+.app .siege-mode strong {
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+.app .siege-mode label span span {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-top: 4px;
+  color: var(--muted);
+}
+.app .siege-mode label:focus-within {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+.app .siege-mode:disabled label {
+  cursor: default;
+}
+.app .siege-best > span {
+  max-width: 200px;
+  line-height: 1.5;
+}
+.app .siege-timer strong {
+  font-variant-numeric: tabular-nums;
+}
+.app .siege-timer.is-low strong {
+  color: #ffb69c;
+}
+.app .siege-hull-count {
+  display: none;
+}
+@media (max-width: 720px) {
+  .app .siege-mode > div {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .app .siege-mode label {
+    padding: 14px 16px;
+  }
+  .app .siege-page[data-mode="timed"] .siege-hud {
+    gap: 8px;
+    padding-inline: 10px;
+  }
+  .app .siege-page[data-mode="timed"] .siege-hud strong {
+    font-size: 19px;
+  }
+  .app .siege-page[data-mode="timed"] .siege-shields strong {
+    gap: 2px;
+  }
+  .app .siege-page[data-mode="timed"] .siege-shields svg {
+    width: 12px;
+  }
+  .app .siege-best > span {
+    max-width: 125px;
+  }
+}
+@media (max-width: 480px) {
+  .app .siege-page[data-mode="timed"] .siege-hud {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto auto auto;
+  }
+  .app .siege-page[data-mode="timed"] .siege-hud > div:first-child,
+  .app .siege-page[data-mode="timed"] .siege-shields svg {
+    display: none;
+  }
+  .app .siege-page[data-mode="timed"] .siege-hull-count {
+    display: inline;
+  }
+  .app .siege-page[data-mode="timed"] .siege-timer {
+    min-width: 48px;
+  }
+}

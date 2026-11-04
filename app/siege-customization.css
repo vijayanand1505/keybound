@@ -1,0 +1,335 @@
+.siege-customization {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--panel);
+  margin-bottom: 24px;
+}
+.siege-customization summary {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 22px;
+  cursor: pointer;
+  font: 500 15px/1.5 var(--sans);
+  list-style: none;
+}
+.siege-customization summary::-webkit-details-marker {
+  display: none;
+}
+.siege-customization summary span {
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 400;
+}
+.siege-customization[open] summary > svg {
+  transform: rotate(180deg);
+}
+.siege-cosmetic-body {
+  display: grid;
+  grid-template-columns: minmax(180px, 260px) minmax(0, 1fr);
+  gap: 24px;
+  padding: 0 22px 22px;
+}
+.siege-cosmetic-body figure {
+  margin: 0;
+  min-width: 0;
+}
+.siege-ship-preview {
+  align-self: start;
+}
+.siege-preview-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+.app .siege-preview-actions .button {
+  font-size: 13px;
+  padding: 8px 12px;
+  min-height: 36px;
+}
+.siege-preview-actions > span {
+  font-size: 12px;
+  color: var(--muted);
+}
+.cosmetic-frame {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  color: var(--text);
+}
+.cosmetic-frame path {
+  fill: color-mix(in srgb, var(--gold) 10%, transparent);
+  stroke: currentColor;
+  stroke-width: 1.5;
+}
+@media (min-width: 1181px) {
+  .siege-ship-preview {
+    position: sticky;
+    top: 24px;
+  }
+}
+.siege-cosmetic-body canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 18/11;
+  border-radius: 9px;
+  border: 1px solid var(--line);
+}
+.siege-cosmetic-body figcaption {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 12px;
+  line-height: 1.6;
+}
+.siege-cosmetic-options {
+  display: grid;
+  gap: 18px;
+  min-width: 0;
+}
+.siege-cosmetic-options fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+}
+.siege-cosmetic-options legend {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0;
+  margin-bottom: 8px;
+}
+.siege-cosmetic-options fieldset > div {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+.siege-cosmetic-options label {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  cursor: pointer;
+}
+.siege-cosmetic-options label input {
+  margin: 4px 0 0;
+  accent-color: var(--gold);
+  flex-shrink: 0;
+}
+.siege-cosmetic-options label strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+}
+.siege-cosmetic-options label small {
+  display: block;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--muted);
+  margin-top: 3px;
+}
+.siege-cosmetic-options .cosmetic-swatch {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  margin-top: 7px;
+  flex-shrink: 0;
+}
+.siege-cosmetic-options .cosmetic-selected {
+  border-color: var(--gold);
+  background: color-mix(in srgb, var(--gold) 6%, transparent);
+}
+.siege-cosmetic-options .cosmetic-locked {
+  cursor: default;
+}
+.siege-cosmetic-options label > svg:not(.cosmetic-frame) {
+  margin-left: auto;
+  margin-top: 4px;
+  flex-shrink: 0;
+  color: var(--muted);
+}
+.siege-cosmetic-reward {
+  color: #eac88a !important;
+  font-size: 14px !important;
+  max-width: 40ch;
+  margin-inline: auto;
+}
+.app .siege-countdown {
+  background: #07121def;
+  z-index: 6;
+  text-align: center;
+  padding: 24px;
+  color: #e6eeed;
+}
+.siege-countdown strong {
+  display: block;
+  font: 600 clamp(72px, 12vw, 116px)/1.2 var(--sans);
+  color: #f0d49d;
+  margin: 12px 0;
+}
+.siege-countdown p {
+  font: 400 15px/1.6 var(--sans);
+  margin: 0;
+}
+.siege-countdown .button {
+  margin-top: 24px;
+  border-color: #718d96;
+  color: #e6eeed;
+  background: #142b36;
+}
+@media (max-width: 1180px) {
+  .siege-cosmetic-body {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .siege-cosmetic-body figure {
+    max-width: 320px;
+  }
+}
+@media (max-width: 600px) {
+  .siege-customization summary {
+    padding: 16px;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .siege-customization summary span {
+    font-size: 12px;
+  }
+  .siege-cosmetic-body {
+    padding: 0 16px 16px;
+    gap: 18px;
+  }
+  .siege-cosmetic-options fieldset > div {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+  }
+  .siege-cosmetic-options label {
+    padding: 12px;
+  }
+}
+/* Keep launch/replay controls reachable in short fullscreen and landscape fields. */
+@container battlefield (max-height: 260px) {
+  .app .siege-overlay {
+    padding: 12px;
+  }
+  .app .siege-intro h2 {
+    font-size: 26px;
+    line-height: 1.15;
+    margin: 4px 0;
+  }
+  .app .siege-intro p {
+    font-size: 12px;
+    line-height: 1.4;
+    margin: 0;
+  }
+  .app .siege-intro .siege-launch {
+    min-height: 32px;
+    padding: 6px 12px;
+    margin-top: 8px;
+    font-size: 12px;
+  }
+  .app .siege-results {
+    gap: 0;
+    max-height: 100%;
+    overflow-y: auto;
+  }
+  .app .siege-results .siege-kicker {
+    font-size: 11px;
+    line-height: 1.2;
+  }
+  .app .siege-results .siege-cosmetic-reward {
+    font-size: 11px !important;
+    line-height: 1.3;
+    margin: 0;
+  }
+  .app .siege-results .siege-result-stats {
+    margin-top: 4px;
+    gap: 20px;
+  }
+  .app .siege-results .siege-result-stats strong {
+    font-size: 18px;
+    margin-bottom: 1px;
+  }
+  .app .siege-countdown strong {
+    font-size: 48px;
+    line-height: 1;
+    margin: 4px 0;
+  }
+  .app .siege-countdown p {
+    font-size: 12px;
+    line-height: 1.3;
+  }
+  .app .siege-countdown .button {
+    min-height: 32px;
+    padding: 6px 12px;
+    margin-top: 8px;
+    font-size: 12px;
+  }
+}
+@container battlefield (max-height: 260px) and (min-width: 450px) {
+  .app .siege-results {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 20px;
+    row-gap: 4px;
+    max-width: 650px;
+    width: 100%;
+    text-align: left;
+    align-items: center;
+  }
+  .app .siege-results .siege-kicker {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .app .siege-results h2 {
+    grid-column: 1;
+    grid-row: 2;
+    margin: 0;
+  }
+  .app .siege-results > p:not(.siege-cosmetic-reward) {
+    grid-column: 1;
+    grid-row: 3;
+  }
+  .app .siege-results .siege-cosmetic-reward {
+    grid-column: 1;
+    grid-row: 4;
+    margin: 0;
+  }
+  .app .siege-results .siege-result-stats {
+    grid-column: 2;
+    grid-row: 1/4;
+    margin: 0;
+    gap: 18px;
+  }
+  .app .siege-results .siege-launch {
+    grid-column: 2;
+    grid-row: 4;
+    margin: 0;
+  }
+  .app .siege-countdown > div {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    column-gap: 24px;
+    align-items: center;
+    max-width: 560px;
+    text-align: left;
+  }
+  .app .siege-countdown strong {
+    grid-column: 1;
+    grid-row: 1/4;
+    font-size: 64px;
+    margin: 0;
+  }
+  .app .siege-countdown p,
+  .app .siege-countdown .button {
+    grid-column: 2;
+  }
+  .app .siege-countdown .button {
+    justify-self: start;
+  }
+}
